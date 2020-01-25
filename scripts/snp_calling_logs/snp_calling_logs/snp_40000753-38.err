@@ -1,0 +1,153 @@
+rm: cannot remove ‘/scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R1.fastq’: No such file or directory
+rm: cannot remove ‘/scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R2.fastq’: No such file or directory
+rm: cannot remove ‘/scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-STATS.txt’: No such file or directory
+DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.
+
+The following have been reloaded with a version change:
+  1) python/3.7-anaconda-2019.03 => python/3.7-anaconda
+
+[00:56:13] This is snippy 4.4.5
+[00:56:13] Written by Torsten Seemann
+[00:56:13] Obtained from https://github.com/tseemann/snippy
+[00:56:13] Detected operating system: linux
+[00:56:13] Enabling bundled linux tools.
+[00:56:13] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[00:56:13] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[00:56:13] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[00:56:13] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[00:56:13] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[00:56:13] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[00:56:13] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[00:56:13] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[00:56:13] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[00:56:13] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[00:56:13] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[00:56:13] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[00:56:13] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[00:56:13] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[00:56:13] Found gzip - /software/centos7/bin/gzip
+[00:56:13] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[00:56:13] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[00:56:13] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[00:56:13] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[00:56:13] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[00:56:13] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[00:56:13] Checking version: java -version is >= 1.8 - ok, have 1.8
+[00:56:14] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[00:56:14] Checking version: bwa is >= 7.12 - ok, have 7.17
+[00:56:14] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/ref_fastas/CG8421_sim_bb.fa
+[00:56:14] Treating reference as 'fasta' format.
+[00:56:14] Will use 24 CPU cores.
+[00:56:14] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R1.fastq
+[00:56:14] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R2.fastq
+[00:56:14] Creating folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2
+[00:56:14] Changing working directory: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2
+[00:56:14] Creating reference folder: reference
+[00:56:14] Extracting FASTA and GFF from reference.
+[00:56:14] Wrote 8 sequences to ref.fa
+[00:56:14] Wrote 0 features to ref.gff
+[00:56:14] Freebayes will process 47 chunks of 34025 bp, 24 chunks at a time.
+[00:56:14] Using BAM RG (Read Group) ID: 38-CG8421_sim-crofts_32D2
+[00:56:14] Running: samtools faidx reference/ref.fa 2>> 38-crofts_32D2.log
+[00:56:14] Running: bwa index reference/ref.fa 2>> 38-crofts_32D2.log
+[00:56:16] Running: mkdir -p reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> 38-crofts_32D2.log
+[00:56:16] Running: ln -sf reference/ref.fa . 2>> 38-crofts_32D2.log
+[00:56:16] Running: ln -sf reference/ref.fa.fai . 2>> 38-crofts_32D2.log
+[00:56:16] Running: mkdir -p reference/ref && gzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> 38-crofts_32D2.log
+[00:56:16] Running: bwa mem  -Y -M -R '@RG\tID:38-CG8421_sim-crofts_32D2\tSM:38-CG8421_sim-crofts_32D2' -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R2.fastq | samclip --max 10 --ref reference/ref.fa.fai | samtools sort -n -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/38-CG8421_sim-crofts_32D2-tmp --threads 15 -m 2666M | samtools fixmate -m - - | samtools sort -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/38-CG8421_sim-crofts_32D2-tmp --threads 15 -m 2666M | samtools markdup -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/38-CG8421_sim-crofts_32D2-tmp -r -s - - > 38-crofts_32D2.bam 2>> 38-crofts_32D2.log
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[samclip] samclip 0.2 by Torsten Seemann (@torstenseemann)
+[samclip] Loading: reference/ref.fa.fai
+[samclip] Found 8 sequences in reference/ref.fa.fai
+[M::process] read 150066 sequences (11254800 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 0, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 150066 reads in 5.156 CPU sec, 1.788 real sec
+[samclip] Processed 100000 records...
+[main] Version: 0.7.17-r1188
+[samclip] Total SAM records 150074, removed 329, allowed 236, passed 149745
+[main] CMD:[samclip] Header contained 10 lines
+ bwa[samclip] Done.
+ mem -Y -M -R @RG\tID:38-CG8421_sim-crofts_32D2\tSM:38-CG8421_sim-crofts_32D2 -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_32D2-QUALITY_PASSED_R2.fastq
+[main] Real time: 2.539 sec; CPU: 5.395 sec
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[00:56:20] Running: samtools index 38-crofts_32D2.bam 2>> 38-crofts_32D2.log
+[00:56:20] Running: fasta_generate_regions.py reference/ref.fa.fai 34025 > reference/ref.txt 2>> 38-crofts_32D2.log
+[00:56:20] Running: freebayes-parallel reference/ref.txt 24 -p 2 -P 0 -C 10 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 10 -F 0.05  -f reference/ref.fa 38-crofts_32D2.bam > 38-crofts_32D2.raw.vcf 2>> 38-crofts_32D2.log
+[00:56:23] Running: bcftools view --include 'FMT/GT="1/1" && QUAL>=30 && FMT/DP>=10 && (FMT/AO)/(FMT/DP)>=0.01' 38-crofts_32D2.raw.vcf  | vt normalize -r reference/ref.fa - | bcftools annotate --remove '^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL' > 38-crofts_32D2.filt.vcf 2>> 38-crofts_32D2.log
+normalize v0.5
+
+options:     input VCF file                                  -
+         [o] output VCF file                                 -
+         [w] sorting window size                             10000
+         [n] no fail on reference inconsistency for non SNPs false
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            reference/ref.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 0
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 0
+       total no. variants observed              : 1
+       total no. reference observed             : 0
+
+Time elapsed: 0.00s
+
+[00:56:23] Running: cp 38-crofts_32D2.filt.vcf 38-crofts_32D2.vcf 2>> 38-crofts_32D2.log
+[00:56:23] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf 38-crofts_32D2.vcf > 38-crofts_32D2.tab 2>> 38-crofts_32D2.log
+[00:56:23] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_extract_subs 38-crofts_32D2.filt.vcf > 38-crofts_32D2.subs.vcf 2>> 38-crofts_32D2.log
+[00:56:23] Running: bcftools convert -Oz -o 38-crofts_32D2.vcf.gz 38-crofts_32D2.vcf 2>> 38-crofts_32D2.log
+[00:56:23] Running: bcftools index -f 38-crofts_32D2.vcf.gz 2>> 38-crofts_32D2.log
+[00:56:23] Running: bcftools consensus -f reference/ref.fa -o 38-crofts_32D2.consensus.fa 38-crofts_32D2.vcf.gz 2>> 38-crofts_32D2.log
+[00:56:24] Running: bcftools convert -Oz -o 38-crofts_32D2.subs.vcf.gz 38-crofts_32D2.subs.vcf 2>> 38-crofts_32D2.log
+[00:56:24] Running: bcftools index -f 38-crofts_32D2.subs.vcf.gz 2>> 38-crofts_32D2.log
+[00:56:24] Running: bcftools consensus -f reference/ref.fa -o 38-crofts_32D2.consensus.subs.fa 38-crofts_32D2.subs.vcf.gz 2>> 38-crofts_32D2.log
+[00:56:24] Running: rm -f 38-crofts_32D2.subs.vcf.gz 38-crofts_32D2.subs.vcf.gz.csi 38-crofts_32D2.subs.vcf.gz.tbi 2>> 38-crofts_32D2.log
+[00:56:24] Generating reference aligned/masked FASTA relative to reference: 38-crofts_32D2.aligned.fa
+[00:56:26] Marked 0 heterozygous sites with 'n'
+[00:56:26] Creating extra output files: BED GFF CSV TXT HTML
+[00:56:26] Identified 1 variants.
+[00:56:26] Result folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2
+[00:56:26] Result files:
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.aligned.fa
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.bam
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.bam.bai
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.bed
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.consensus.fa
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.consensus.subs.fa
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.csv
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.filt.vcf
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.gff
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.html
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.log
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.raw.vcf
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.subs.vcf
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.tab
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.txt
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.vcf
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.vcf.gz
+[00:56:26] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/38-CG8421_sim-crofts_32D2/38-crofts_32D2.vcf.gz.csi
+[00:56:26] Walltime used: 13 seconds
+[00:56:26] Wishing you a life free of homopolymer errors.
+[00:56:26] Done.

@@ -1,0 +1,35 @@
+[16:53:07] This is snippy 4.4.5
+[16:53:07] Written by Torsten Seemann
+[16:53:07] Obtained from https://github.com/tseemann/snippy
+[16:53:07] Detected operating system: linux
+[16:53:07] Enabling bundled linux tools.
+[16:53:07] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[16:53:07] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[16:53:07] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[16:53:07] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[16:53:07] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[16:53:07] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[16:53:07] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[16:53:07] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[16:53:07] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[16:53:07] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[16:53:07] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[16:53:07] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[16:53:07] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[16:53:07] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[16:53:07] Found gzip - /software/centos7/bin/gzip
+[16:53:07] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[16:53:07] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[16:53:07] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[16:53:07] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[16:53:07] Checking version: java -version is >= 1.8 - ok, have 1.8
+[16:53:08] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[16:53:08] Checking version: bwa is >= 7.12 - ok, have 7.17
+[16:53:08] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/refs/GCA_000171795.2_ASM17179v2_genomic.gbff
+[16:53:08] Treating reference as 'genbank' format.
+[16:53:08] Will use 24 CPU cores.
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_8R1-QUALITY_PASSED_R1.fastq
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_8R1-QUALITY_PASSED_R2.fastq
+[16:53:08] Output folder /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_8R1 already exists. Remove or use --force.

@@ -1,0 +1,60 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20200117
+##source=freeBayes v1.3.1-dirty
+##reference=reference/ref.fa
+##contig=<ID=CG8421_sim-c_000000000001-x,length=565758>
+##contig=<ID=CG8421_sim-c_000000000002-x,length=287092>
+##contig=<ID=CG8421_sim-c_000000000003-x,length=266142>
+##contig=<ID=CG8421_sim-c_000000000004-x,length=153010>
+##contig=<ID=CG8421_sim-c_000000000005-x,length=104606>
+##contig=<ID=CG8421_sim-c_000000000006-x,length=92334>
+##contig=<ID=CG8421_sim-c_000000000007-x,length=89457>
+##contig=<ID=CG8421_sim-c_000000000009-x,length=14343>
+##phasing=none
+##commandline="freebayes -p 1 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.001 -f reference/ref.fa 10-CG8421_sim-crofts_8R1.bam --region CG8421_sim-c_000000000001-x:0-34025"
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=RO,Number=1,Type=Integer,Description="Count of full observations of the reference haplotype.">
+##INFO=<ID=AO,Number=A,Type=Integer,Description="Count of full observations of this alternate haplotype.">
+##INFO=<ID=QR,Number=1,Type=Integer,Description="Reference allele quality sum in phred">
+##INFO=<ID=QA,Number=A,Type=Integer,Description="Alternate allele quality sum in phred">
+##INFO=<ID=AB,Number=A,Type=Float,Description="Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous">
+##INFO=<ID=TYPE,Number=A,Type=String,Description="The type of allele, either snp, mnp, ins, del, or complex.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##bcftools_viewVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --include 'QUAL>=10 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.001' 10-CG8421_sim-crofts_8R1.raw2.vcf; Date=Fri Jan 17 12:48:05 2020
+##bcftools_annotateVersion=1.9+htslib-1.9
+##bcftools_annotateCommand=annotate --remove ^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL; Date=Fri Jan 17 12:48:05 2020
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	10-CG8421_sim-crofts_8R1
+CG8421_sim-c_000000000001-x	2512	.	GAATACTTG	TACTAGTTA	2045.54	.	AB=0;AO=72;DP=76;QA=2664;QR=148;RO=4;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:76:4:148:72:2664:-226.324,0
+CG8421_sim-c_000000000001-x	2528	.	T	C	3346.69	.	AB=0;AO=106;DP=110;QA=3914;QR=148;RO=4;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:110:4:148:106:3914:-338.742,0
+CG8421_sim-c_000000000001-x	2538	.	C	T	3683.82	.	AB=0;AO=116;DP=120;QA=4260;QR=148;RO=4;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:120:4:148:116:4260:-369.868,0
+CG8421_sim-c_000000000001-x	2557	.	GAAAGTAGGAGTA	AAAGCTGGAGTG	2343.04	.	AB=0;AO=82;DP=86;QA=3034;QR=148;RO=4;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:86:4:148:82:3034:-259.569,0
+CG8421_sim-c_000000000001-x	77257	.	AA	TT	4871.43	.	AB=0;AO=164;DP=184;QA=5994;QR=416;RO=12;TYPE=mnp	GT:DP:RO:QR:AO:QA:GL	1:184:12:416:164:5994:-501.753,0
+CG8421_sim-c_000000000001-x	77264	.	AAG	A	4903.19	.	AB=0;AO=156;DP=192;QA=5702;QR=0;RO=0;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:192:0:0:156:5702:-512.905,0
+CG8421_sim-c_000000000001-x	290861	.	AC	A	3961.75	.	AB=0;AO=148;DP=180;QA=5318;QR=500;RO=14;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:180:14:500:148:5318:-433.394,0
+CG8421_sim-c_000000000001-x	379062	.	AG	A	4463.06	.	AB=0;AO=162;DP=200;QA=5834;QR=422;RO=12;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:200:12:422:162:5834:-486.82,0
+CG8421_sim-c_000000000001-x	413673	.	TA	T	5585.76	.	AB=0;AO=172;DP=172;QA=6364;QR=0;RO=0;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:172:0:0:172:6364:-572.435,0
+CG8421_sim-c_000000000001-x	556706	.	C	CG	2118.46	.	AB=0;AO=122;DP=210;QA=4404;QR=1834;RO=52;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:210:52:1834:122:4404:-231.169,0
+CG8421_sim-c_000000000002-x	166466	.	AG	A	4023.03	.	AB=0;AO=146;DP=238;QA=5214;QR=320;RO=10;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:238:10:320:146:5214:-440.263,0
+CG8421_sim-c_000000000002-x	250215	.	ATAAAAA	CTGAAAG	1273.97	.	AB=0;AO=42;DP=42;QA=1552;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:42:0:0:42:1552:-139.622,0
+CG8421_sim-c_000000000002-x	250226	.	AA	CT	1189.65	.	AB=0;AO=40;DP=40;QA=1480;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:40:0:0:40:1480:-133.492,0
+CG8421_sim-c_000000000002-x	250245	.	GTTATG	AATAGA	180.78	.	AB=0;AO=6;DP=6;QA=222;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:6:0:0:6:222:-19.9683,0
+CG8421_sim-c_000000000002-x	286938	.	TC	T	3085.27	.	AB=0;AO=146;DP=208;QA=5210;QR=1428;RO=42;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:208:42:1428:146:5210:-340.216,0
+CG8421_sim-c_000000000003-x	219571	.	AT	TTC	289.71	.	AB=0;AO=10;DP=10;QA=370;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:10:0:0:10:370:-33.3575,0
+CG8421_sim-c_000000000003-x	219583	.	A	T	226.247	.	AB=0;AO=10;DP=12;QA=346;QR=66;RO=2;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:12:2:66:10:346:-25.205,0
+CG8421_sim-c_000000000003-x	219597	.	GAAAAATATAAGAATAAATA	AGGAAAATCATAACAATAAATT	830.078	.	AB=0;AO=32;DP=50;QA=1184;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:50:0:0:32:1184:-106.516,0
+CG8421_sim-c_000000000005-x	139	.	C	CGATGAAATAAAGGAGGAT	1011.73	.	AB=0;AO=34;DP=36;QA=1258;QR=0;RO=0;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:36:0:0:34:1258:-113.191,0
+CG8421_sim-c_000000000006-x	61444	.	A	AG	3067.88	.	AB=0;AO=154;DP=236;QA=5544;QR=1674;RO=48;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:236:48:1674:154:5544:-348.113,0
+CG8421_sim-c_000000000006-x	81754	.	T	TG	1016.24	.	AB=0;AO=164;DP=314;QA=5934;QR=4374;RO=122;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:314:122:4374:164:5934:-140.302,0
+CG8421_sim-c_000000000006-x	86419	.	T	C	3474.8	.	AB=0;AO=112;DP=112;QA=4120;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:112:0:0:112:4120:-370.956,0
+CG8421_sim-c_000000000006-x	90380	.	T	G	227.32	.	AB=0;AO=8;DP=8;QA=288;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:8:0:0:8:288:-26.2665,0
+CG8421_sim-c_000000000006-x	90430	.	G	C	4168.15	.	AB=0;AO=132;DP=132;QA=4822;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:132:0:0:132:4822:-434.098,0
+CG8421_sim-c_000000000009-x	5568	.	TG	T	4592.48	.	AB=0;AO=164;DP=200;QA=6016;QR=544;RO=16;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:200:16:544:164:6016:-492.194,0
+CG8421_sim-c_000000000009-x	8161	.	TG	T	4392.1	.	AB=0;AO=156;DP=194;QA=5630;QR=462;RO=14;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:194:14:462:156:5630:-464.874,0

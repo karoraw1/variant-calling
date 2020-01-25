@@ -1,0 +1,55 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20200117
+##source=freeBayes v1.3.1-dirty
+##reference=reference/ref.fa
+##contig=<ID=CAMPY4_spr11-c_000000000003-x,length=15863>
+##contig=<ID=CAMPY4_spr11-c_000000000004-x,length=14380>
+##contig=<ID=CAMPY4_spr11-c_000000000008-x,length=12979>
+##contig=<ID=CAMPY4_spr11-c_000000000019-x,length=9855>
+##contig=<ID=CAMPY4_spr11-c_000000000031-x,length=8488>
+##contig=<ID=CAMPY4_spr11-c_000000000040-x,length=7969>
+##contig=<ID=CAMPY4_spr11-c_000000000048-x,length=7758>
+##contig=<ID=CAMPY4_spr11-c_000000000057-x,length=7078>
+##contig=<ID=CAMPY4_spr11-c_000000000060-x,length=6883>
+##contig=<ID=CAMPY4_spr11-c_000000000064-x,length=6828>
+##contig=<ID=CAMPY4_spr11-c_000000000078-x,length=6444>
+##contig=<ID=CAMPY4_spr11-c_000000000096-x,length=5712>
+##contig=<ID=CAMPY4_spr11-c_000000000100-x,length=5655>
+##contig=<ID=CAMPY4_spr11-c_000000000101-x,length=5566>
+##contig=<ID=CAMPY4_spr11-c_000000000204-x,length=3001>
+##contig=<ID=CAMPY4_spr11-c_000000000261-x,length=2177>
+##contig=<ID=CAMPY4_spr11-c_000000000302-x,length=1747>
+##contig=<ID=CAMPY4_spr11-c_000000000321-x,length=1595>
+##contig=<ID=CAMPY4_spr11-c_000000000336-x,length=1484>
+##contig=<ID=CAMPY4_spr11-c_000000000357-x,length=1356>
+##contig=<ID=CAMPY4_spr11-c_000000000373-x,length=1246>
+##contig=<ID=CAMPY4_spr11-c_000000000390-x,length=1121>
+##contig=<ID=CAMPY4_spr11-c_000000000537-x,length=705>
+##contig=<ID=CAMPY4_spr11-c_000000000552-x,length=683>
+##contig=<ID=CAMPY4_spr11-c_000000001483-x,length=15863>
+##phasing=none
+##commandline="freebayes -p 1 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.001 -f reference/ref.fa 25-CAMPY4_spr11-CAMPY15_S7.bam --region CAMPY4_spr11-c_000000000003-x:0-3314"
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=RO,Number=1,Type=Integer,Description="Count of full observations of the reference haplotype.">
+##INFO=<ID=AO,Number=A,Type=Integer,Description="Count of full observations of this alternate haplotype.">
+##INFO=<ID=QR,Number=1,Type=Integer,Description="Reference allele quality sum in phred">
+##INFO=<ID=QA,Number=A,Type=Integer,Description="Alternate allele quality sum in phred">
+##INFO=<ID=AB,Number=A,Type=Float,Description="Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous">
+##INFO=<ID=TYPE,Number=A,Type=String,Description="The type of allele, either snp, mnp, ins, del, or complex.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##bcftools_viewVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --include 'QUAL>=10 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.001' 25-CAMPY4_spr11-CAMPY15_S7.raw2.vcf; Date=Fri Jan 17 17:18:44 2020
+##bcftools_annotateVersion=1.9+htslib-1.9
+##bcftools_annotateCommand=annotate --remove ^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL; Date=Fri Jan 17 17:18:44 2020
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	25-CAMPY4_spr11-CAMPY15_S7
+CAMPY4_spr11-c_000000000096-x	1293	.	AC	A	517.949	.	AB=0;AO=18;DP=18;QA=597;QR=0;RO=0;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:18:0:0:18:597:-54.0359,0
+CAMPY4_spr11-c_000000000100-x	1005	.	G	A	26.906	.	AB=0;AO=5;DP=8;QA=153;QR=113;RO=3;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:8:3:113:5:153:-3.52932,0
+CAMPY4_spr11-c_000000000302-x	1694	.	A	T	45.2823	.	AB=0;AO=5;DP=9;QA=188;QR=133;RO=4;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:9:4:133:5:188:-4.98761,0
+CAMPY4_spr11-c_000000000321-x	596	.	AG	A	208.581	.	AB=0;AO=12;DP=18;QA=425;QR=210;RO=6;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:18:6:210:12:425:-19.3408,0

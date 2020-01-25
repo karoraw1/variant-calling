@@ -1,0 +1,49 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20200117
+##source=freeBayes v1.3.1-dirty
+##reference=reference/ref.fa
+##contig=<ID=CAMPY41_S20-c_000000000003-x,length=28913>
+##contig=<ID=CAMPY41_S20-c_000000000004-x,length=28520>
+##contig=<ID=CAMPY41_S20-c_000000000006-x,length=24501>
+##contig=<ID=CAMPY41_S20-c_000000000024-x,length=15453>
+##contig=<ID=CAMPY41_S20-c_000000000027-x,length=15081>
+##contig=<ID=CAMPY41_S20-c_000000000030-x,length=14108>
+##contig=<ID=CAMPY41_S20-c_000000000039-x,length=12961>
+##contig=<ID=CAMPY41_S20-c_000000000041-x,length=12831>
+##contig=<ID=CAMPY41_S20-c_000000000043-x,length=12797>
+##contig=<ID=CAMPY41_S20-c_000000000053-x,length=10266>
+##contig=<ID=CAMPY41_S20-c_000000000059-x,length=9862>
+##contig=<ID=CAMPY41_S20-c_000000000143-x,length=3623>
+##contig=<ID=CAMPY41_S20-c_000000000172-x,length=2652>
+##contig=<ID=CAMPY41_S20-c_000000000174-x,length=2504>
+##contig=<ID=CAMPY41_S20-c_000000000262-x,length=446>
+##contig=<ID=CAMPY41_S20-c_000000000275-x,length=15081>
+##contig=<ID=CAMPY41_S20-c_000000000277-x,length=12797>
+##phasing=none
+##commandline="freebayes -p 1 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.001 -f reference/ref.fa 27-CAMPY41_S20-pCAMPY47.bam --region CAMPY41_S20-c_000000000003-x:0-4821"
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=RO,Number=1,Type=Integer,Description="Count of full observations of the reference haplotype.">
+##INFO=<ID=AO,Number=A,Type=Integer,Description="Count of full observations of this alternate haplotype.">
+##INFO=<ID=QR,Number=1,Type=Integer,Description="Reference allele quality sum in phred">
+##INFO=<ID=QA,Number=A,Type=Integer,Description="Alternate allele quality sum in phred">
+##INFO=<ID=AB,Number=A,Type=Float,Description="Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous">
+##INFO=<ID=TYPE,Number=A,Type=String,Description="The type of allele, either snp, mnp, ins, del, or complex.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##bcftools_viewVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --include 'QUAL>=10 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.001' 27-CAMPY41_S20-pCAMPY47.raw2.vcf; Date=Fri Jan 17 17:20:30 2020
+##bcftools_annotateVersion=1.9+htslib-1.9
+##bcftools_annotateCommand=annotate --remove ^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL; Date=Fri Jan 17 17:20:30 2020
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	27-CAMPY41_S20-pCAMPY47
+CAMPY41_S20-c_000000000003-x	7453	.	GA	AT	450.943	.	AB=0;AO=15;DP=15;QA=521;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:15:0:0:15:521:-47.215,0
+CAMPY41_S20-c_000000000003-x	7466	.	A	C	442.377	.	AB=0;AO=15;DP=15;QA=519;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:15:0:0:15:519:-47.0318,0
+CAMPY41_S20-c_000000000004-x	87	.	A	C	146.775	.	AB=0;AO=5;DP=5;QA=187;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:5:0:0:5:187:-17.193,0
+CAMPY41_S20-c_000000000004-x	132	.	G	T	351.28	.	AB=0;AO=11;DP=11;QA=408;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:11:0:0:11:408:-37.068,0
+CAMPY41_S20-c_000000000006-x	24267	.	G	A	65.3051	.	AB=0;AO=5;DP=8;QA=180;QR=110;RO=3;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:8:3:110:5:180:-6.29094,0
+CAMPY41_S20-c_000000000039-x	11139	.	C	A	458.148	.	AB=0;AO=15;DP=15;QA=529;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:15:0:0:15:529:-47.9355,0

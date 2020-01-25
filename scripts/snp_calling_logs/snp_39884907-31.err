@@ -1,0 +1,156 @@
+[16:53:07] This is snippy 4.4.5
+[16:53:07] Written by Torsten Seemann
+[16:53:07] Obtained from https://github.com/tseemann/snippy
+[16:53:07] Detected operating system: linux
+[16:53:07] Enabling bundled linux tools.
+[16:53:07] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[16:53:07] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[16:53:07] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[16:53:07] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[16:53:07] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[16:53:07] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[16:53:07] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[16:53:07] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[16:53:07] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[16:53:07] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[16:53:07] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[16:53:07] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[16:53:07] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[16:53:07] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[16:53:07] Found gzip - /software/centos7/bin/gzip
+[16:53:07] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[16:53:07] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[16:53:07] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[16:53:07] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[16:53:07] Checking version: java -version is >= 1.8 - ok, have 1.8
+[16:53:08] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[16:53:08] Checking version: bwa is >= 7.12 - ok, have 7.17
+[16:53:08] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/refs/GCA_000171795.2_ASM17179v2_genomic.gbff
+[16:53:08] Treating reference as 'genbank' format.
+[16:53:08] Will use 24 CPU cores.
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R1.fastq
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R2.fastq
+[16:53:08] Creating folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80
+[16:53:08] Changing working directory: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80
+[16:53:08] Creating reference folder: reference
+[16:53:08] Extracting FASTA and GFF from reference.
+[16:53:09] Wrote 1 sequences to ref.fa
+[16:53:09] Wrote 1687 features to ref.gff
+[16:53:09] Creating reference/snpeff.config
+[16:53:09] Freebayes will process 47 chunks of 35390 bp, 24 chunks at a time.
+[16:53:09] Using BAM RG (Read Group) ID: pCAMPY80
+[16:53:09] Running: samtools faidx reference/ref.fa 2>> pCAMPY80.log
+[16:53:09] Running: bwa index reference/ref.fa 2>> pCAMPY80.log
+[16:53:10] Running: mkdir -p reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> pCAMPY80.log
+[16:53:10] Running: ln -sf reference/ref.fa . 2>> pCAMPY80.log
+[16:53:10] Running: ln -sf reference/ref.fa.fai . 2>> pCAMPY80.log
+[16:53:10] Running: mkdir -p reference/ref && gzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> pCAMPY80.log
+[16:53:10] Running: snpEff build -c reference/snpeff.config -dataDir . -gff3 ref 2>> pCAMPY80.log
+[16:53:13] Running: bwa mem  -Y -M -R '@RG\tID:pCAMPY80\tSM:pCAMPY80' -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R2.fastq | samclip --max 10 --ref reference/ref.fa.fai | samtools sort -n -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_pCAMPY80 --threads 15 -m 2666M | samtools fixmate -m - - | samtools sort -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_pCAMPY80 --threads 15 -m 2666M | samtools markdup -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_pCAMPY80 -r -s - - > pCAMPY80.bam 2>> pCAMPY80.log
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[samclip] samclip 0.2 by Torsten Seemann (@torstenseemann)
+[samclip] Loading: reference/ref.fa.fai
+[samclip] Found 1 sequences in reference/ref.fa.fai
+[M::process] read 663562 sequences (93092673 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 297510, 3, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (89, 125, 173)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 341)
+[M::mem_pestat] mean and std.dev: (133.17, 58.70)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 425)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 663562 reads in 66.880 CPU sec, 3.207 real sec
+[samclip] Processed 100000 records...
+[samclip] Processed 200000 records...
+[samclip] Processed 300000 records...
+[samclip] Processed 400000 records...
+[samclip] Processed 500000 records...
+[samclip] Processed 600000 records...
+[main] Version: 0.7.17-r1188
+[main] CMD:[samclip] Total SAM records 664159, removed 38932, allowed 12872, passed 625227
+ bwa[samclip] Header contained 3 lines
+ mem[samclip] Done.
+ -Y -M -R @RG\tID:pCAMPY80\tSM:pCAMPY80 -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/pCAMPY80-QUALITY_PASSED_R2.fastq
+[main] Real time: 7.673 sec; CPU: 68.402 sec
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[16:53:31] Running: samtools index pCAMPY80.bam 2>> pCAMPY80.log
+[16:53:32] Running: fasta_generate_regions.py reference/ref.fa.fai 35390 > reference/ref.txt 2>> pCAMPY80.log
+[16:53:32] Running: freebayes-parallel reference/ref.txt 24 -p 2 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.05  -f reference/ref.fa pCAMPY80.bam > pCAMPY80.raw.vcf 2>> pCAMPY80.log
+[16:53:36] Running: bcftools view --include 'FMT/GT="1/1" && QUAL>=30 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.01' pCAMPY80.raw.vcf  | vt normalize -r reference/ref.fa - | bcftools annotate --remove '^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL' > pCAMPY80.filt.vcf 2>> pCAMPY80.log
+normalize v0.5
+
+options:     input VCF file                                  -
+         [o] output VCF file                                 -
+         [w] sorting window size                             10000
+         [n] no fail on reference inconsistency for non SNPs false
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            reference/ref.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 28
+          no. right trimmed                     : 198
+          no. left and right trimmed            : 21
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 247
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 247
+       total no. variants observed              : 11863
+       total no. reference observed             : 0
+
+Time elapsed: 0.26s
+
+[16:53:36] Running: snpEff ann -noLog -noStats -no-downstream -no-upstream -no-utr -c reference/snpeff.config -dataDir . ref pCAMPY80.filt.vcf > pCAMPY80.vcf 2>> pCAMPY80.log
+[16:53:39] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf pCAMPY80.vcf > pCAMPY80.tab 2>> pCAMPY80.log
+[16:53:41] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_extract_subs pCAMPY80.filt.vcf > pCAMPY80.subs.vcf 2>> pCAMPY80.log
+[16:53:41] Running: bcftools convert -Oz -o pCAMPY80.vcf.gz pCAMPY80.vcf 2>> pCAMPY80.log
+[16:53:42] Running: bcftools index -f pCAMPY80.vcf.gz 2>> pCAMPY80.log
+[16:53:42] Running: bcftools consensus -f reference/ref.fa -o pCAMPY80.consensus.fa pCAMPY80.vcf.gz 2>> pCAMPY80.log
+[16:53:43] Running: bcftools convert -Oz -o pCAMPY80.subs.vcf.gz pCAMPY80.subs.vcf 2>> pCAMPY80.log
+[16:53:43] Running: bcftools index -f pCAMPY80.subs.vcf.gz 2>> pCAMPY80.log
+[16:53:43] Running: bcftools consensus -f reference/ref.fa -o pCAMPY80.consensus.subs.fa pCAMPY80.subs.vcf.gz 2>> pCAMPY80.log
+[16:53:43] Running: rm -f pCAMPY80.subs.vcf.gz pCAMPY80.subs.vcf.gz.csi pCAMPY80.subs.vcf.gz.tbi 2>> pCAMPY80.log
+[16:53:43] Generating reference aligned/masked FASTA relative to reference: pCAMPY80.aligned.fa
+[16:53:47] Marked 72 heterozygous sites with 'n'
+[16:53:47] Creating extra output files: BED GFF CSV TXT HTML
+[16:53:48] Identified 11863 variants.
+[16:53:48] Result folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80
+[16:53:48] Result files:
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.aligned.fa
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.bam
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.bam.bai
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.bed
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.consensus.fa
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.consensus.subs.fa
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.csv
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.filt.vcf
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.gff
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.html
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.log
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.raw.vcf
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.subs.vcf
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.tab
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.txt
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.vcf
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.vcf.gz
+[16:53:48] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/pCAMPY80/pCAMPY80.vcf.gz.csi
+[16:53:48] Walltime used: 41 seconds
+[16:53:48] Wishing you a life free of homopolymer errors.
+[16:53:48] Done.

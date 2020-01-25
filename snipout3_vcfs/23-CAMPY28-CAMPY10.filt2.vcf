@@ -1,0 +1,42 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20200117
+##source=freeBayes v1.3.1-dirty
+##reference=reference/ref.fa
+##contig=<ID=CAMPY28-c_000000000001-x,length=124375>
+##contig=<ID=CAMPY28-c_000000000002-x,length=91305>
+##contig=<ID=CAMPY28-c_000000000004-x,length=76968>
+##contig=<ID=CAMPY28-c_000000000005-x,length=68816>
+##contig=<ID=CAMPY28-c_000000000008-x,length=66840>
+##contig=<ID=CAMPY28-c_000000000016-x,length=37492>
+##contig=<ID=CAMPY28-c_000000000023-x,length=28825>
+##contig=<ID=CAMPY28-c_000000000033-x,length=18187>
+##contig=<ID=CAMPY28-c_000000000036-x,length=14677>
+##contig=<ID=CAMPY28-c_000000000060-x,length=5753>
+##contig=<ID=CAMPY28-c_000000000085-x,length=1601>
+##contig=<ID=CAMPY28-c_000000000173-x,length=18588>
+##contig=<ID=CAMPY28-c_000000000179-x,length=5753>
+##contig=<ID=CAMPY28-c_000000000190-x,length=1602>
+##phasing=none
+##commandline="freebayes -p 1 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.001 -f reference/ref.fa 23-CAMPY28-CAMPY10.bam --region CAMPY28-c_000000000001-x:0-12138"
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=RO,Number=1,Type=Integer,Description="Count of full observations of the reference haplotype.">
+##INFO=<ID=AO,Number=A,Type=Integer,Description="Count of full observations of this alternate haplotype.">
+##INFO=<ID=QR,Number=1,Type=Integer,Description="Reference allele quality sum in phred">
+##INFO=<ID=QA,Number=A,Type=Integer,Description="Alternate allele quality sum in phred">
+##INFO=<ID=AB,Number=A,Type=Float,Description="Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous">
+##INFO=<ID=TYPE,Number=A,Type=String,Description="The type of allele, either snp, mnp, ins, del, or complex.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##bcftools_viewVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --include 'QUAL>=10 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.001' 23-CAMPY28-CAMPY10.raw2.vcf; Date=Fri Jan 17 17:19:44 2020
+##bcftools_annotateVersion=1.9+htslib-1.9
+##bcftools_annotateCommand=annotate --remove ^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL; Date=Fri Jan 17 17:19:46 2020
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	23-CAMPY28-CAMPY10
+CAMPY28-c_000000000001-x	50	.	ATCA	GTCT	118.939	.	AB=0;AO=6;DP=8;QA=204;QR=67;RO=2;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:8:2:67:6:204:-12.3302,0
+CAMPY28-c_000000000036-x	13740	.	G	A	47.1526	.	AB=0;AO=10;DP=19;QA=349;QR=283;RO=9;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:19:9:283:10:349:-5.97053,0

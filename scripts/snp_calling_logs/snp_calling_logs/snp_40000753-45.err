@@ -1,0 +1,154 @@
+ 00% -- (num pairs processed: 1)  00% -- (num pairs processed: 1,000)  01% -- (num pairs processed: 2,000)  02% -- (num pairs processed: 3,000)  03% -- (num pairs processed: 4,000)  03% -- (num pairs processed: 5,000)  04% -- (num pairs processed: 6,000)  05% -- (num pairs processed: 7,000)  06% -- (num pairs processed: 8,000)  07% -- (num pairs processed: 9,000)  07% -- (num pairs processed: 10,000)  08% -- (num pairs processed: 11,000)  09% -- (num pairs processed: 12,000)  10% -- (num pairs processed: 13,000)  11% -- (num pairs processed: 14,000)  11% -- (num pairs processed: 15,000)  12% -- (num pairs processed: 16,000)  13% -- (num pairs processed: 17,000)  14% -- (num pairs processed: 18,000)  15% -- (num pairs processed: 19,000)  15% -- (num pairs processed: 20,000)  16% -- (num pairs processed: 21,000)  17% -- (num pairs processed: 22,000)  18% -- (num pairs processed: 23,000)  19% -- (num pairs processed: 24,000)  19% -- (num pairs processed: 25,000)  20% -- (num pairs processed: 26,000)  21% -- (num pairs processed: 27,000)  22% -- (num pairs processed: 28,000)  23% -- (num pairs processed: 29,000)  23% -- (num pairs processed: 30,000)  24% -- (num pairs processed: 31,000)  25% -- (num pairs processed: 32,000)  26% -- (num pairs processed: 33,000)  26% -- (num pairs processed: 34,000)  27% -- (num pairs processed: 35,000)  28% -- (num pairs processed: 36,000)  29% -- (num pairs processed: 37,000)  30% -- (num pairs processed: 38,000)  30% -- (num pairs processed: 39,000)  31% -- (num pairs processed: 40,000)  32% -- (num pairs processed: 41,000)  33% -- (num pairs processed: 42,000)  34% -- (num pairs processed: 43,000)  34% -- (num pairs processed: 44,000)  35% -- (num pairs processed: 45,000)  36% -- (num pairs processed: 46,000)  37% -- (num pairs processed: 47,000)  38% -- (num pairs processed: 48,000)  38% -- (num pairs processed: 49,000)  39% -- (num pairs processed: 50,000)  40% -- (num pairs processed: 51,000)  41% -- (num pairs processed: 52,000)  42% -- (num pairs processed: 53,000)  42% -- (num pairs processed: 54,000)  43% -- (num pairs processed: 55,000)  44% -- (num pairs processed: 56,000)  45% -- (num pairs processed: 57,000)  46% -- (num pairs processed: 58,000)  46% -- (num pairs processed: 59,000)  47% -- (num pairs processed: 60,000)  48% -- (num pairs processed: 61,000)  49% -- (num pairs processed: 62,000)  50% -- (num pairs processed: 63,000)  50% -- (num pairs processed: 64,000)  51% -- (num pairs processed: 65,000)  52% -- (num pairs processed: 66,000)  53% -- (num pairs processed: 67,000)  53% -- (num pairs processed: 68,000)  54% -- (num pairs processed: 69,000)  55% -- (num pairs processed: 70,000)  56% -- (num pairs processed: 71,000)  57% -- (num pairs processed: 72,000)  57% -- (num pairs processed: 73,000)  58% -- (num pairs processed: 74,000)  59% -- (num pairs processed: 75,000)  60% -- (num pairs processed: 76,000)  61% -- (num pairs processed: 77,000)  61% -- (num pairs processed: 78,000)  62% -- (num pairs processed: 79,000)  63% -- (num pairs processed: 80,000)  64% -- (num pairs processed: 81,000)  65% -- (num pairs processed: 82,000)  65% -- (num pairs processed: 83,000)  66% -- (num pairs processed: 84,000)  67% -- (num pairs processed: 85,000)  68% -- (num pairs processed: 86,000)  69% -- (num pairs processed: 87,000)  69% -- (num pairs processed: 88,000)  70% -- (num pairs processed: 89,000)  71% -- (num pairs processed: 90,000)  72% -- (num pairs processed: 91,000)  73% -- (num pairs processed: 92,000)  73% -- (num pairs processed: 93,000)  74% -- (num pairs processed: 94,000)  75% -- (num pairs processed: 95,000)  76% -- (num pairs processed: 96,000)  76% -- (num pairs processed: 97,000)  77% -- (num pairs processed: 98,000)  78% -- (num pairs processed: 99,000)  79% -- (num pairs processed: 100,000)  80% -- (num pairs processed: 101,000)  80% -- (num pairs processed: 102,000)  81% -- (num pairs processed: 103,000)  82% -- (num pairs processed: 104,000)  83% -- (num pairs processed: 105,000)  84% -- (num pairs processed: 106,000)  84% -- (num pairs processed: 107,000)  85% -- (num pairs processed: 108,000)  86% -- (num pairs processed: 109,000)  87% -- (num pairs processed: 110,000)  88% -- (num pairs processed: 111,000)  88% -- (num pairs processed: 112,000)  89% -- (num pairs processed: 113,000)  90% -- (num pairs processed: 114,000)  91% -- (num pairs processed: 115,000)  92% -- (num pairs processed: 116,000)  92% -- (num pairs processed: 117,000)  93% -- (num pairs processed: 118,000)  94% -- (num pairs processed: 119,000)  95% -- (num pairs processed: 120,000)  96% -- (num pairs processed: 121,000)  96% -- (num pairs processed: 122,000)  97% -- (num pairs processed: 123,000)  98% -- (num pairs processed: 124,000)  99% -- (num pairs processed: 125,000)  100% -- (num pairs processed: 126,000)  100% -- (num pairs processed: 127,000)  101% -- (num pairs processed: 128,000)  102% -- (num pairs processed: 129,000)  103% -- (num pairs processed: 130,000)  103% -- (num pairs processed: 131,000)  104% -- (num pairs processed: 132,000)  105% -- (num pairs processed: 133,000)  106% -- (num pairs processed: 134,000)  107% -- (num pairs processed: 135,000)  107% -- (num pairs processed: 136,000)  108% -- (num pairs processed: 137,000)  109% -- (num pairs processed: 138,000)  110% -- (num pairs processed: 139,000)  111% -- (num pairs processed: 140,000)  111% -- (num pairs processed: 141,000)  112% -- (num pairs processed: 142,000)  113% -- (num pairs processed: 143,000)  114% -- (num pairs processed: 144,000)  115% -- (num pairs processed: 145,000)  115% -- (num pairs processed: 146,000)  116% -- (num pairs processed: 147,000)  117% -- (num pairs processed: 148,000)  118% -- (num pairs processed: 149,000)  119% -- (num pairs processed: 150,000)  119% -- (num pairs processed: 151,000)  120% -- (num pairs processed: 152,000)  121% -- (num pairs processed: 153,000)  122% -- (num pairs processed: 154,000)  123% -- (num pairs processed: 155,000) DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.
+
+The following have been reloaded with a version change:
+  1) python/3.7-anaconda-2019.03 => python/3.7-anaconda
+
+[01:14:42] This is snippy 4.4.5
+[01:14:42] Written by Torsten Seemann
+[01:14:42] Obtained from https://github.com/tseemann/snippy
+[01:14:42] Detected operating system: linux
+[01:14:42] Enabling bundled linux tools.
+[01:14:42] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[01:14:42] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[01:14:42] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[01:14:42] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[01:14:42] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[01:14:42] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[01:14:42] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[01:14:42] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[01:14:42] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[01:14:42] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[01:14:42] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[01:14:42] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[01:14:42] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[01:14:42] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[01:14:42] Found gzip - /software/centos7/bin/gzip
+[01:14:42] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[01:14:42] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[01:14:43] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[01:14:43] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[01:14:43] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[01:14:43] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[01:14:43] Checking version: java -version is >= 1.8 - ok, have 1.8
+[01:14:43] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[01:14:43] Checking version: bwa is >= 7.12 - ok, have 7.17
+[01:14:43] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/ref_fastas/CAMPY28_bb.fa
+[01:14:43] Treating reference as 'fasta' format.
+[01:14:43] Will use 24 CPU cores.
+[01:14:43] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R1.fastq
+[01:14:43] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R2.fastq
+[01:14:43] Creating folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10
+[01:14:43] Changing working directory: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10
+[01:14:43] Creating reference folder: reference
+[01:14:43] Extracting FASTA and GFF from reference.
+[01:14:43] Wrote 16 sequences to ref.fa
+[01:14:43] Wrote 0 features to ref.gff
+[01:14:43] Freebayes will process 47 chunks of 13071 bp, 24 chunks at a time.
+[01:14:43] Using BAM RG (Read Group) ID: 45-CAMPY28-CAMPY10
+[01:14:43] Running: samtools faidx reference/ref.fa 2>> 45-CAMPY10.log
+[01:14:43] Running: bwa index reference/ref.fa 2>> 45-CAMPY10.log
+[01:14:45] Running: mkdir -p reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> 45-CAMPY10.log
+[01:14:45] Running: ln -sf reference/ref.fa . 2>> 45-CAMPY10.log
+[01:14:45] Running: ln -sf reference/ref.fa.fai . 2>> 45-CAMPY10.log
+[01:14:45] Running: mkdir -p reference/ref && gzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> 45-CAMPY10.log
+[01:14:45] Running: bwa mem  -Y -M -R '@RG\tID:45-CAMPY28-CAMPY10\tSM:45-CAMPY28-CAMPY10' -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R2.fastq | samclip --max 10 --ref reference/ref.fa.fai | samtools sort -n -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/45-CAMPY28-CAMPY10-tmp --threads 15 -m 2666M | samtools fixmate -m - - | samtools sort -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/45-CAMPY28-CAMPY10-tmp --threads 15 -m 2666M | samtools markdup -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout2/45-CAMPY28-CAMPY10-tmp -r -s - - > 45-CAMPY10.bam 2>> 45-CAMPY10.log
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[samclip] samclip 0.2 by Torsten Seemann (@torstenseemann)
+[samclip] Loading: reference/ref.fa.fai
+[samclip] Found 16 sequences in reference/ref.fa.fai
+[M::process] read 140950 sequences (29894797 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2, 21618, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (128, 204, 288)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 608)
+[M::mem_pestat] mean and std.dev: (214.60, 108.37)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 768)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 140950 reads in 19.382 CPU sec, 0.851 real sec
+[samclip] Processed 100000 records...
+[main] Version: 0.7.17-r1188
+[samclip] Total SAM records 141113, removed 14001, allowed 2065, passed 127112
+[main] CMD:[samclip] Header contained 18 lines
+ bwa[samclip] Done.
+ mem -Y -M -R @RG\tID:45-CAMPY28-CAMPY10\tSM:45-CAMPY28-CAMPY10 -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY10-QUALITY_PASSED_R2.fastq
+[main] Real time: 1.681 sec; CPU: 19.738 sec
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[01:14:49] Running: samtools index 45-CAMPY10.bam 2>> 45-CAMPY10.log
+[01:14:50] Running: fasta_generate_regions.py reference/ref.fa.fai 13071 > reference/ref.txt 2>> 45-CAMPY10.log
+[01:14:50] Running: freebayes-parallel reference/ref.txt 24 -p 2 -P 0 -C 10 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 10 -F 0.05  -f reference/ref.fa 45-CAMPY10.bam > 45-CAMPY10.raw.vcf 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools view --include 'FMT/GT="1/1" && QUAL>=30 && FMT/DP>=10 && (FMT/AO)/(FMT/DP)>=0.01' 45-CAMPY10.raw.vcf  | vt normalize -r reference/ref.fa - | bcftools annotate --remove '^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL' > 45-CAMPY10.filt.vcf 2>> 45-CAMPY10.log
+normalize v0.5
+
+options:     input VCF file                                  -
+         [o] output VCF file                                 -
+         [w] sorting window size                             10000
+         [n] no fail on reference inconsistency for non SNPs false
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            reference/ref.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 0
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 0
+       total no. variants observed              : 0
+       total no. reference observed             : 0
+
+Time elapsed: 0.00s
+
+[01:14:51] Running: cp 45-CAMPY10.filt.vcf 45-CAMPY10.vcf 2>> 45-CAMPY10.log
+[01:14:51] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf 45-CAMPY10.vcf > 45-CAMPY10.tab 2>> 45-CAMPY10.log
+[01:14:51] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_extract_subs 45-CAMPY10.filt.vcf > 45-CAMPY10.subs.vcf 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools convert -Oz -o 45-CAMPY10.vcf.gz 45-CAMPY10.vcf 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools index -f 45-CAMPY10.vcf.gz 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools consensus -f reference/ref.fa -o 45-CAMPY10.consensus.fa 45-CAMPY10.vcf.gz 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools convert -Oz -o 45-CAMPY10.subs.vcf.gz 45-CAMPY10.subs.vcf 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools index -f 45-CAMPY10.subs.vcf.gz 2>> 45-CAMPY10.log
+[01:14:51] Running: bcftools consensus -f reference/ref.fa -o 45-CAMPY10.consensus.subs.fa 45-CAMPY10.subs.vcf.gz 2>> 45-CAMPY10.log
+[01:14:51] Running: rm -f 45-CAMPY10.subs.vcf.gz 45-CAMPY10.subs.vcf.gz.csi 45-CAMPY10.subs.vcf.gz.tbi 2>> 45-CAMPY10.log
+[01:14:51] Generating reference aligned/masked FASTA relative to reference: 45-CAMPY10.aligned.fa
+[01:14:52] Marked 1 heterozygous sites with 'n'
+[01:14:52] Creating extra output files: BED GFF CSV TXT HTML
+[01:14:52] Identified 0 variants.
+[01:14:52] Result folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10
+[01:14:52] Result files:
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.aligned.fa
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.bam
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.bam.bai
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.bed
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.consensus.fa
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.consensus.subs.fa
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.csv
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.filt.vcf
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.gff
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.html
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.log
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.raw.vcf
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.subs.vcf
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.tab
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.txt
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.vcf
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.vcf.gz
+[01:14:52] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout2/45-CAMPY28-CAMPY10/45-CAMPY10.vcf.gz.csi
+[01:14:52] Walltime used: 10 seconds
+[01:14:52] Wishing you a life free of homopolymer errors.
+[01:14:52] Done.

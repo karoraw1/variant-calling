@@ -1,0 +1,42 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##fileDate=20200117
+##source=freeBayes v1.3.1-dirty
+##reference=reference/ref.fa
+##contig=<ID=CG8421-NZ_CP005388-x,length=1636029>
+##phasing=none
+##commandline="freebayes -p 1 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.001 -f reference/ref.fa 1-CG8421-crofts_9D2.bam --region CG8421-NZ_CP005388-x:0-35389"
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Total read depth at the locus">
+##INFO=<ID=RO,Number=1,Type=Integer,Description="Count of full observations of the reference haplotype.">
+##INFO=<ID=AO,Number=A,Type=Integer,Description="Count of full observations of this alternate haplotype.">
+##INFO=<ID=QR,Number=1,Type=Integer,Description="Reference allele quality sum in phred">
+##INFO=<ID=QA,Number=A,Type=Integer,Description="Alternate allele quality sum in phred">
+##INFO=<ID=AB,Number=A,Type=Float,Description="Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous">
+##INFO=<ID=TYPE,Number=A,Type=String,Description="The type of allele, either snp, mnp, ins, del, or complex.">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=GL,Number=G,Type=Float,Description="Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth">
+##FORMAT=<ID=RO,Number=1,Type=Integer,Description="Reference allele observation count">
+##FORMAT=<ID=QR,Number=1,Type=Integer,Description="Sum of quality of the reference observations">
+##FORMAT=<ID=AO,Number=A,Type=Integer,Description="Alternate allele observation count">
+##FORMAT=<ID=QA,Number=A,Type=Integer,Description="Sum of quality of the alternate observations">
+##bcftools_viewVersion=1.9+htslib-1.9
+##bcftools_viewCommand=view --include 'QUAL>=10 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.001' 1-CG8421-crofts_9D2.raw2.vcf; Date=Fri Jan 17 12:35:21 2020
+##bcftools_annotateVersion=1.9+htslib-1.9
+##bcftools_annotateCommand=annotate --remove ^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL; Date=Fri Jan 17 12:35:21 2020
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	1-CG8421-crofts_9D2
+CG8421-NZ_CP005388-x	67639	.	T	TC	195.942	.	AB=0;AO=68;DP=160;QA=1444;QR=1174;RO=34;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:160:34:1174:68:1444:-24.2674,0
+CG8421-NZ_CP005388-x	149015	.	G	A	119.625	.	AB=0;AO=6;DP=6;QA=164;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:6:0:0:6:164:-15.0289,0
+CG8421-NZ_CP005388-x	565751	.	AG	A	1063.1	.	AB=0;AO=82;DP=242;QA=2860;QR=1570;RO=50;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:242:50:1570:82:2860:-116.037,0
+CG8421-NZ_CP005388-x	629686	.	T	TG	523.629	.	AB=0;AO=88;DP=228;QA=3032;QR=2234;RO=66;TYPE=ins	GT:DP:RO:QR:AO:QA:GL	1:228:66:2234:88:3032:-71.776,0
+CG8421-NZ_CP005388-x	649500	.	ATAAAAA	CTGAAAG	741.774	.	AB=0;AO=26;DP=26;QA=936;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:26:0:0:26:936:-84.2073,0
+CG8421-NZ_CP005388-x	649511	.	AA	CT	689.935	.	AB=0;AO=24;DP=24;QA=864;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:24:0:0:24:864:-78.0826,0
+CG8421-NZ_CP005388-x	694687	.	GAAAGTAGGAGTA	AAAGCTGGAGTG	477.106	.	AB=0;AO=42;DP=70;QA=1512;QR=932;RO=26;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:70:26:932:42:1512:-52.1739,0
+CG8421-NZ_CP005388-x	769387	.	AA	TT	3338.26	.	AB=0;AO=120;DP=156;QA=4312;QR=608;RO=18;TYPE=mnp	GT:DP:RO:QR:AO:QA:GL	1:156:18:608:120:4312:-333.223,0
+CG8421-NZ_CP005388-x	769394	.	AAG	A	3282.86	.	AB=0;AO=106;DP=162;QA=3720;QR=0;RO=0;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:162:0:0:106:3720:-334.657,0
+CG8421-NZ_CP005388-x	982991	.	AC	A	24.1333	.	AB=0;AO=88;DP=204;QA=2776;QR=2848;RO=82;TYPE=del	GT:DP:RO:QR:AO:QA:GL	0:204:82:2848:88:2776:0,-6.50257
+CG8421-NZ_CP005388-x	1105803	.	TA	T	993.227	.	AB=0;AO=34;DP=34;QA=1216;QR=0;RO=0;TYPE=del	GT:DP:RO:QR:AO:QA:GL	1:34:0:0:34:1216:-109.396,0
+CG8421-NZ_CP005388-x	1268144	.	A	G	1872.07	.	AB=0;AO=66;DP=66;QA=2344;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:66:0:0:66:2344:-211.22,0
+CG8421-NZ_CP005388-x	1416414	.	T	A	1855.28	.	AB=0;AO=66;DP=66;QA=2316;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:66:0:0:66:2316:-208.695,0
+CG8421-NZ_CP005388-x	1416422	.	C	G	1240.4	.	AB=0;AO=46;DP=46;QA=1560;QR=0;RO=0;TYPE=snp	GT:DP:RO:QR:AO:QA:GL	1:46:0:0:46:1560:-140.682,0
+CG8421-NZ_CP005388-x	1416458	.	AT	GAA	216.457	.	AB=0;AO=8;DP=8;QA=288;QR=0;RO=0;TYPE=complex	GT:DP:RO:QR:AO:QA:GL	1:8:0:0:8:288:-25.9761,0

@@ -1,0 +1,153 @@
+[17:46:15] This is snippy 4.4.5
+[17:46:15] Written by Torsten Seemann
+[17:46:15] Obtained from https://github.com/tseemann/snippy
+[17:46:15] Detected operating system: linux
+[17:46:15] Enabling bundled linux tools.
+[17:46:15] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[17:46:15] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[17:46:15] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[17:46:15] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[17:46:15] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[17:46:15] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[17:46:15] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[17:46:15] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[17:46:15] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[17:46:15] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[17:46:15] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[17:46:15] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[17:46:15] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[17:46:15] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[17:46:15] Found gzip - /software/centos7/bin/gzip
+[17:46:15] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[17:46:15] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[17:46:15] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[17:46:15] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[17:46:15] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[17:46:16] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[17:46:16] Checking version: java -version is >= 1.8 - ok, have 1.8
+[17:46:17] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[17:46:17] Checking version: bwa is >= 7.12 - ok, have 7.17
+[17:46:17] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/refs/GCA_001865415.1_ASM186541v1_genomic.gbff
+[17:46:17] Treating reference as 'genbank' format.
+[17:46:17] Will use 24 CPU cores.
+[17:46:17] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R1.fastq
+[17:46:17] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R2.fastq
+[17:46:17] Creating folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref
+[17:46:17] Changing working directory: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref
+[17:46:17] Creating reference folder: reference
+[17:46:17] Extracting FASTA and GFF from reference.
+[17:46:19] Wrote 2 sequences to ref.fa
+[17:46:19] Wrote 1897 features to ref.gff
+[17:46:19] Creating reference/snpeff.config
+[17:46:19] Freebayes will process 47 chunks of 39062 bp, 24 chunks at a time.
+[17:46:19] Using BAM RG (Read Group) ID: CAMPY4_spr11_ref
+[17:46:19] Running: samtools faidx reference/ref.fa 2>> CAMPY4_spr11.log
+[17:46:19] Running: bwa index reference/ref.fa 2>> CAMPY4_spr11.log
+[17:46:19] Running: mkdir -p reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> CAMPY4_spr11.log
+[17:46:19] Running: ln -sf reference/ref.fa . 2>> CAMPY4_spr11.log
+[17:46:20] Running: ln -sf reference/ref.fa.fai . 2>> CAMPY4_spr11.log
+[17:46:20] Running: mkdir -p reference/ref && gzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> CAMPY4_spr11.log
+[17:46:20] Running: snpEff build -c reference/snpeff.config -dataDir . -gff3 ref 2>> CAMPY4_spr11.log
+[17:46:23] Running: bwa mem  -Y -M -R '@RG\tID:CAMPY4_spr11_ref\tSM:CAMPY4_spr11_ref' -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R2.fastq | samclip --max 10 --ref reference/ref.fa.fai | samtools sort -n -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_CAMPY4_spr11 --threads 15 -m 2666M | samtools fixmate -m - - | samtools sort -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_CAMPY4_spr11 --threads 15 -m 2666M | samtools markdup -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_CAMPY4_spr11 -r -s - - > CAMPY4_spr11.bam 2>> CAMPY4_spr11.log
+[samclip] samclip 0.2 by Torsten Seemann (@torstenseemann)
+[samclip] Loading: reference/ref.fa.fai
+[samclip] Found 2 sequences in reference/ref.fa.fai
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 381656 sequences (60347252 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (1, 132041, 4, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (121, 156, 188)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 322)
+[M::mem_pestat] mean and std.dev: (153.80, 48.67)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 389)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 381656 reads in 31.264 CPU sec, 3.535 real sec
+[samclip] Processed 100000 records...
+[samclip] Processed 200000 records...
+[samclip] Processed 300000 records...
+[main] Version: 0.7.17-r1188
+[main] CMD:[samclip] Total SAM records 382374, removed 9860, allowed 3278, passed 372514
+ bwa[samclip] Header contained 4 lines
+ mem[samclip] Done.
+ -Y -M -R @RG\tID:CAMPY4_spr11_ref\tSM:CAMPY4_spr11_ref -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/CAMPY4_spr11-QUALITY_PASSED_R2.fastq
+[main] Real time: 6.158 sec; CPU: 32.456 sec
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[17:46:35] Running: samtools index CAMPY4_spr11.bam 2>> CAMPY4_spr11.log
+[17:46:35] Running: fasta_generate_regions.py reference/ref.fa.fai 39062 > reference/ref.txt 2>> CAMPY4_spr11.log
+[17:46:35] Running: freebayes-parallel reference/ref.txt 24 -p 2 -P 0 -C 10 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 10 -F 0.05  -f reference/ref.fa CAMPY4_spr11.bam > CAMPY4_spr11.raw.vcf 2>> CAMPY4_spr11.log
+[17:46:37] Running: bcftools view --include 'FMT/GT="1/1" && QUAL>=30 && FMT/DP>=10 && (FMT/AO)/(FMT/DP)>=0.01' CAMPY4_spr11.raw.vcf  | vt normalize -r reference/ref.fa - | bcftools annotate --remove '^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL' > CAMPY4_spr11.filt.vcf 2>> CAMPY4_spr11.log
+normalize v0.5
+
+options:     input VCF file                                  -
+         [o] output VCF file                                 -
+         [w] sorting window size                             10000
+         [n] no fail on reference inconsistency for non SNPs false
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            reference/ref.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 15
+          no. right trimmed                     : 77
+          no. left and right trimmed            : 9
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 101
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 101
+       total no. variants observed              : 4430
+       total no. reference observed             : 0
+
+Time elapsed: 0.08s
+
+[17:46:37] Running: snpEff ann -noLog -noStats -no-downstream -no-upstream -no-utr -c reference/snpeff.config -dataDir . ref CAMPY4_spr11.filt.vcf > CAMPY4_spr11.vcf 2>> CAMPY4_spr11.log
+[17:46:39] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf CAMPY4_spr11.vcf > CAMPY4_spr11.tab 2>> CAMPY4_spr11.log
+[17:46:41] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_extract_subs CAMPY4_spr11.filt.vcf > CAMPY4_spr11.subs.vcf 2>> CAMPY4_spr11.log
+[17:46:41] Running: bcftools convert -Oz -o CAMPY4_spr11.vcf.gz CAMPY4_spr11.vcf 2>> CAMPY4_spr11.log
+[17:46:42] Running: bcftools index -f CAMPY4_spr11.vcf.gz 2>> CAMPY4_spr11.log
+[17:46:42] Running: bcftools consensus -f reference/ref.fa -o CAMPY4_spr11.consensus.fa CAMPY4_spr11.vcf.gz 2>> CAMPY4_spr11.log
+[17:46:42] Running: bcftools convert -Oz -o CAMPY4_spr11.subs.vcf.gz CAMPY4_spr11.subs.vcf 2>> CAMPY4_spr11.log
+[17:46:42] Running: bcftools index -f CAMPY4_spr11.subs.vcf.gz 2>> CAMPY4_spr11.log
+[17:46:42] Running: bcftools consensus -f reference/ref.fa -o CAMPY4_spr11.consensus.subs.fa CAMPY4_spr11.subs.vcf.gz 2>> CAMPY4_spr11.log
+[17:46:42] Running: rm -f CAMPY4_spr11.subs.vcf.gz CAMPY4_spr11.subs.vcf.gz.csi CAMPY4_spr11.subs.vcf.gz.tbi 2>> CAMPY4_spr11.log
+[17:46:42] Generating reference aligned/masked FASTA relative to reference: CAMPY4_spr11.aligned.fa
+[17:46:44] Marked 144 heterozygous sites with 'n'
+[17:46:44] Creating extra output files: BED GFF CSV TXT HTML
+[17:46:45] Identified 4430 variants.
+[17:46:45] Result folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref
+[17:46:45] Result files:
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.aligned.fa
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.bam
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.bam.bai
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.bed
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.consensus.fa
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.consensus.subs.fa
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.csv
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.filt.vcf
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.gff
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.html
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.log
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.raw.vcf
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.subs.vcf
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.tab
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.txt
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.vcf
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.vcf.gz
+[17:46:45] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/CAMPY4_spr11_ref/CAMPY4_spr11.vcf.gz.csi
+[17:46:45] Walltime used: 30 seconds
+[17:46:45] Did you know? Snippy is a combination of SNP, Skippy, and snappy.
+[17:46:45] Done.

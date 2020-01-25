@@ -1,0 +1,193 @@
+[16:53:07] This is snippy 4.4.5
+[16:53:07] Written by Torsten Seemann
+[16:53:07] Obtained from https://github.com/tseemann/snippy
+[16:53:07] Detected operating system: linux
+[16:53:07] Enabling bundled linux tools.
+[16:53:07] Found bwa - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bwa
+[16:53:07] Found bcftools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/bcftools
+[16:53:07] Found samtools - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samtools
+[16:53:07] Found java - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/java
+[16:53:07] Found snpEff - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snpEff
+[16:53:07] Found samclip - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/samclip
+[16:53:07] Found seqtk - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/seqtk
+[16:53:07] Found parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/parallel
+[16:53:07] Found freebayes - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes
+[16:53:07] Found freebayes-parallel - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/freebayes-parallel
+[16:53:07] Found fasta_generate_regions.py - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/fasta_generate_regions.py
+[16:53:07] Found vcfstreamsort - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfstreamsort
+[16:53:07] Found vcfuniq - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcfuniq
+[16:53:07] Found vcffirstheader - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vcffirstheader
+[16:53:07] Found gzip - /software/centos7/bin/gzip
+[16:53:07] Found vt - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/vt
+[16:53:07] Found snippy-vcf_to_tab - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab
+[16:53:07] Found snippy-vcf_report - /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_report
+[16:53:07] Checking version: samtools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: bcftools --version is >= 1.7 - ok, have 1.9
+[16:53:07] Checking version: freebayes --version is >= 1.1 - ok, have 1.3
+[16:53:07] Checking version: java -version is >= 1.8 - ok, have 1.8
+[16:53:07] Checking version: snpEff -version is >= 4.3 - ok, have 4.3
+[16:53:08] Checking version: bwa is >= 7.12 - ok, have 7.17
+[16:53:08] Using reference: /scratch/users/karoraw1@jhu.edu/variant-calling/refs/GCA_000171795.2_ASM17179v2_genomic.gbff
+[16:53:08] Treating reference as 'genbank' format.
+[16:53:08] Will use 24 CPU cores.
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R1.fastq
+[16:53:08] Using read file: /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R2.fastq
+[16:53:08] Creating folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2
+[16:53:08] Changing working directory: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2
+[16:53:08] Creating reference folder: reference
+[16:53:08] Extracting FASTA and GFF from reference.
+[16:53:09] Wrote 1 sequences to ref.fa
+[16:53:09] Wrote 1687 features to ref.gff
+[16:53:09] Creating reference/snpeff.config
+[16:53:09] Freebayes will process 47 chunks of 35390 bp, 24 chunks at a time.
+[16:53:09] Using BAM RG (Read Group) ID: crofts_9D2
+[16:53:09] Running: samtools faidx reference/ref.fa 2>> crofts_9D2.log
+[16:53:09] Running: bwa index reference/ref.fa 2>> crofts_9D2.log
+[16:53:09] Running: mkdir -p reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> crofts_9D2.log
+[16:53:09] Running: ln -sf reference/ref.fa . 2>> crofts_9D2.log
+[16:53:09] Running: ln -sf reference/ref.fa.fai . 2>> crofts_9D2.log
+[16:53:09] Running: mkdir -p reference/ref && gzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> crofts_9D2.log
+[16:53:10] Running: snpEff build -c reference/snpeff.config -dataDir . -gff3 ref 2>> crofts_9D2.log
+[16:53:13] Running: bwa mem  -Y -M -R '@RG\tID:crofts_9D2\tSM:crofts_9D2' -t 24 reference/ref.fa /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R2.fastq | samclip --max 10 --ref reference/ref.fa.fai | samtools sort -n -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_crofts_9D2 --threads 15 -m 2666M | samtools fixmate -m - - | samtools sort -l 0 -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_crofts_9D2 --threads 15 -m 2666M | samtools markdup -T /scratch/users/karoraw1@jhu.edu/variant-calling/snipout/tmp_crofts_9D2 -r -s - - > crofts_9D2.bam 2>> crofts_9D2.log
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[samclip] samclip 0.2 by Torsten Seemann (@torstenseemann)
+[samclip] Loading: reference/ref.fa.fai
+[samclip] Found 1 sequences in reference/ref.fa.fai
+[M::process] read 3200000 sequences (240000000 bp)...
+[W::bseq_read] the 2nd file has fewer sequences.
+[M::process] read 540976 sequences (40573200 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 0, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 3200000 reads in 116.122 CPU sec, 10.280 real sec
+[samclip] Processed 100000 records...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 0, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] skip orientation FR as there are not enough pairs
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 540976 reads in 17.832 CPU sec, 1.114 real sec
+[samclip] Processed 200000 records...
+[samclip] Processed 300000 records...
+[samclip] Processed 400000 records...
+[samclip] Processed 500000 records...
+[samclip] Processed 600000 records...
+[samclip] Processed 700000 records...
+[samclip] Processed 800000 records...
+[samclip] Processed 900000 records...
+[samclip] Processed 1000000 records...
+[samclip] Processed 1100000 records...
+[samclip] Processed 1200000 records...
+[samclip] Processed 1300000 records...
+[samclip] Processed 1400000 records...
+[samclip] Processed 1500000 records...
+[samclip] Processed 1600000 records...
+[samclip] Processed 1700000 records...
+[samclip] Processed 1800000 records...
+[samclip] Processed 1900000 records...
+[samclip] Processed 2000000 records...
+[samclip] Processed 2100000 records...
+[samclip] Processed 2200000 records...
+[samclip] Processed 2300000 records...
+[samclip] Processed 2400000 records...
+[samclip] Processed 2500000 records...
+[samclip] Processed 2600000 records...
+[samclip] Processed 2700000 records...
+[samclip] Processed 2800000 records...
+[samclip] Processed 2900000 records...
+[samclip] Processed 3000000 records...
+[samclip] Processed 3100000 records...
+[samclip] Processed 3200000 records...
+[W::bseq_read] the 2nd file has fewer sequences.
+[samclip] Processed 3300000 records...
+[samclip] Processed 3400000 records...
+[samclip] Processed 3500000 records...
+[samclip] Processed 3600000 records...
+[samclip] Processed 3700000 records...
+[W::bseq_read] the 2nd file has fewer sequences.
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem -Y -M -R @RG\tID:crofts_9D2\tSM:crofts_9D2 -t[samclip] Total SAM records 3741134, removed 6720, allowed 5940, passed 3734414
+ 24[samclip] Header contained 3 lines
+ reference/ref.fa[samclip] Done.
+ /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R1.fastq /scratch/users/karoraw1@jhu.edu/__CA__/CA_V3/data/01_QC_final/crofts_9D2-QUALITY_PASSED_R2.fastq
+[main] Real time: 29.609 sec; CPU: 140.623 sec
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[bam_sort_core] merging from 0 files and 15 in-memory blocks...
+[16:54:08] Running: samtools index crofts_9D2.bam 2>> crofts_9D2.log
+[16:54:09] Running: fasta_generate_regions.py reference/ref.fa.fai 35390 > reference/ref.txt 2>> crofts_9D2.log
+[16:54:09] Running: freebayes-parallel reference/ref.txt 24 -p 2 -P 0 -C 5 --min-repeat-entropy 1.5 --strict-vcf -q 13 -m 60 --min-coverage 5 -F 0.05  -f reference/ref.fa crofts_9D2.bam > crofts_9D2.raw.vcf 2>> crofts_9D2.log
+[16:54:12] Running: bcftools view --include 'FMT/GT="1/1" && QUAL>=30 && FMT/DP>=5 && (FMT/AO)/(FMT/DP)>=0.01' crofts_9D2.raw.vcf  | vt normalize -r reference/ref.fa - | bcftools annotate --remove '^INFO/TYPE,^INFO/DP,^INFO/RO,^INFO/AO,^INFO/AB,^FORMAT/GT,^FORMAT/DP,^FORMAT/RO,^FORMAT/AO,^FORMAT/QR,^FORMAT/QA,^FORMAT/GL' > crofts_9D2.filt.vcf 2>> crofts_9D2.log
+normalize v0.5
+
+options:     input VCF file                                  -
+         [o] output VCF file                                 -
+         [w] sorting window size                             10000
+         [n] no fail on reference inconsistency for non SNPs false
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            reference/ref.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 2
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 2
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 2
+       total no. variants observed              : 8
+       total no. reference observed             : 0
+
+Time elapsed: 0.00s
+
+[16:54:13] Running: snpEff ann -noLog -noStats -no-downstream -no-upstream -no-utr -c reference/snpeff.config -dataDir . ref crofts_9D2.filt.vcf > crofts_9D2.vcf 2>> crofts_9D2.log
+[16:54:13] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf crofts_9D2.vcf > crofts_9D2.tab 2>> crofts_9D2.log
+[16:54:15] Running: /scratch/users/karoraw1@jhu.edu/variant-calling/bin/SNIPPY_ENV/bin/snippy-vcf_extract_subs crofts_9D2.filt.vcf > crofts_9D2.subs.vcf 2>> crofts_9D2.log
+[16:54:15] Running: bcftools convert -Oz -o crofts_9D2.vcf.gz crofts_9D2.vcf 2>> crofts_9D2.log
+[16:54:15] Running: bcftools index -f crofts_9D2.vcf.gz 2>> crofts_9D2.log
+[16:54:15] Running: bcftools consensus -f reference/ref.fa -o crofts_9D2.consensus.fa crofts_9D2.vcf.gz 2>> crofts_9D2.log
+[16:54:15] Running: bcftools convert -Oz -o crofts_9D2.subs.vcf.gz crofts_9D2.subs.vcf 2>> crofts_9D2.log
+[16:54:15] Running: bcftools index -f crofts_9D2.subs.vcf.gz 2>> crofts_9D2.log
+[16:54:15] Running: bcftools consensus -f reference/ref.fa -o crofts_9D2.consensus.subs.fa crofts_9D2.subs.vcf.gz 2>> crofts_9D2.log
+[16:54:15] Running: rm -f crofts_9D2.subs.vcf.gz crofts_9D2.subs.vcf.gz.csi crofts_9D2.subs.vcf.gz.tbi 2>> crofts_9D2.log
+[16:54:15] Generating reference aligned/masked FASTA relative to reference: crofts_9D2.aligned.fa
+[16:54:23] Marked 365 heterozygous sites with 'n'
+[16:54:23] Creating extra output files: BED GFF CSV TXT HTML
+[16:54:23] Identified 8 variants.
+[16:54:23] Result folder: /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2
+[16:54:23] Result files:
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.aligned.fa
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.bam
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.bam.bai
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.bed
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.consensus.fa
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.consensus.subs.fa
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.csv
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.filt.vcf
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.gff
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.html
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.log
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.raw.vcf
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.subs.vcf
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.tab
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.txt
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.vcf
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.vcf.gz
+[16:54:23] * /home-3/karoraw1@jhu.edu/scratch/variant-calling/snipout/crofts_9D2/crofts_9D2.vcf.gz.csi
+[16:54:23] Walltime used: 1 minutes, 16 seconds
+[16:54:23] May the SNPs be with you.
+[16:54:23] Done.
